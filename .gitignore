@@ -1,4 +1,7 @@
-#hidden some site 
-model1/
-model2/
+#hidden some site
 __pycache__/
+ 
+model1/
+
+model2/
+

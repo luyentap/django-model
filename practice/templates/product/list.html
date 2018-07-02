@@ -1,0 +1,14 @@
+{% extends "tabbar.html" %}
+
+{% load humanize %} 
+{% block content %}
+<h2>list product</h2>
+<ul>
+	{% for product in products %}
+		<li>{{ product.id }}</li>
+		<li>{{ product.name }}</li> 
+	{% endfor %}
+</ul>
+
+
+{% endblock %}
