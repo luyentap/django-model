@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib import admin
 from django.utils.html import format_html
+from _datetime import datetime
+from random import choice
 
 
 # Create your models here.
@@ -16,12 +18,20 @@ class Category(models.Model):
         
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'get_category_name')
-    
+
+ 
 class Order(models.Model):
+    STATUS_CHOICES = (
+    (1,'one'),
+    (2,'two'),
+)   
+  
     date_order = models.DateTimeField('date order')
     date_ship = models.DateTimeField('date ship')
-    number = models.IntegerField(default=1)
+    number = models.IntegerField(default=1,choices=STATUS_CHOICES)
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
+    
+    
 
 
 #     ●    Create a custom QuerySet that only get products with Category = “Car”
