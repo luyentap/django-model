@@ -1,5 +1,6 @@
 from django import forms
 from .models import Product
+from django.contrib import admin
 
 
 class ProductForm(forms.ModelForm):
@@ -11,4 +12,13 @@ class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = ['name', 'price', 'category','number']
+        exclude = ['name']
+
+class Product(admin.ModelAdmin):    
+    form = ProductForm
+    exclude = ['price']
+
+        
+        
+
     

@@ -1,14 +1,21 @@
 from django.db import models
-from unicodedata import category
+from django.contrib import admin
+from django.utils.html import format_html
 
 
 # Create your models here.
+
 class Category(models.Model):
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=600)
     
     def __str__(self):
         return (self.name)
+    def get_category_name(self):
+        return "abc";
+        
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('name', 'get_category_name')
     
 class Order(models.Model):
     date_order = models.DateTimeField('date order')
@@ -85,5 +92,3 @@ class Product(models.Model):
     
     def get_object_all(self):
         return Product.objects.all()
-
-         
