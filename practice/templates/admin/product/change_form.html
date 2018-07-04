@@ -1,0 +1,15 @@
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+{% extends "admin/change_form.html" %}
+{% load i18n %}
+{% block submit_buttons_bottom %}
+{{ block.super }}
+<div class="submit-row list-group">
+<button type="button" title="Cancel" class="list-group-item active" name="_cancel" >
+<span class="glyphicon step-backward"></span>
+<span class="text">Cancel</span>
+</button>
+</div>
+{% endblock %}s

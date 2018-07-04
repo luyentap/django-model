@@ -20,3 +20,4 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url('practice/',include('practice.urls'))
 ]
+admin.site.index_title = "custom index title-kikako tranning"
