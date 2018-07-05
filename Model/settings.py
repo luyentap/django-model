@@ -39,7 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
+    'tastypie',
 ]
+#setting for api
+API_LIMIT_PER_PAGE=5
+TASTYPIE_FULL_DEBUG = True
+TASTYPIE_ABSTRACT_APIKEY = True
+TASTYPIE_ALLOW_MISSING_SLASH = False #tự điền /
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
