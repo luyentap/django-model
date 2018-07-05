@@ -45,7 +45,22 @@ INSTALLED_APPS = [
 API_LIMIT_PER_PAGE=5
 TASTYPIE_FULL_DEBUG = True
 TASTYPIE_ABSTRACT_APIKEY = True
-TASTYPIE_ALLOW_MISSING_SLASH = False #tự điền /
+TASTYPIE_ALLOW_MISSING_SLASH = False #tự điền / cuối url
+
+#add 'testserver' to ALLOWED_HOSTS
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'testserver', ]
+#Caching Options
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'TIMEOUT': 60
+    },
+    'resources': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'TIMEOUT': 60
+    }
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -135,3 +150,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+

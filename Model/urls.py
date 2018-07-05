@@ -16,12 +16,12 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from tastypie.api import Api
-from api.resources import MyModelResource
+from api.resources import MyModelResource,CategoryResource
 
 
 v1_api = Api(api_name='v1') #http://localhost:8000/api/v1/
-v1_api.register(MyModelResource())
-
+v1_api.register(MyModelResource()) #register my resource
+v1_api.register(CategoryResource())
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
